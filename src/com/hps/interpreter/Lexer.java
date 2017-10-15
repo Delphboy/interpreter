@@ -11,6 +11,10 @@ public class Lexer
 
 	private HashMap<String, Token> map;
 
+	/**
+	 * Creates a new Lexer based on a program's source code as input
+	 * @param input : source code to be lexed
+	 */
 	public Lexer(String input)
 	{
 		map = new HashMap<String, Token>();
@@ -20,6 +24,10 @@ public class Lexer
 		readChar();
 	}
 
+	/**
+	 * Searches input for tokens, and returns the corresponding token.
+	 * @return token
+	 */
 	public Token nextToken()
 	{
 		Token token = new Token();
@@ -111,6 +119,9 @@ public class Lexer
 		return token;
 	}
 
+	/**
+	 * Eats whitespace so it doesn't affect the program
+	 */
 	private void skipWhiteSpace()
 	{
 		while(ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r')
@@ -119,6 +130,10 @@ public class Lexer
 		}
 	}
 
+	/**
+	 * Reads input for identifiers (such as variable names)
+	 * @return identifier
+	 */
 	private String readIdentifier()
 	{
 		int pos = position;
@@ -129,6 +144,11 @@ public class Lexer
 		return String.valueOf(input.substring(pos, position));
 	}
 
+	/**
+	 * Read the ASCII of current readPosition and update read position variables
+	 * ch set to ASCII of character
+	 * if the read position is out of bounds, ch is set to 0
+	 */
 	public void readChar()
 	{
 		//mark end of file
