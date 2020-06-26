@@ -1,0 +1,33 @@
+namespace interpreter.lexer
+{
+    public enum TokenType
+    {
+         ILLEGAL,
+         EOF,
+         IDENT,
+         INT,
+         ASSIGN,
+         PLUS,
+         MINUS,
+         BANG,
+         ASTERISK,
+         SLASH,
+         LT,
+         RT,
+         COMMA,
+         SEMICOLON,
+         LPAREN,
+         RPAREN,
+         LBRACE,
+         RBRACE,
+         FUNCTION,
+         LET,
+         TRUE,
+         FALSE,
+         IF,
+         ELSE,
+         RETURN,
+         EQ,
+         NOT_EQ,
+    }
+}
