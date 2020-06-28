@@ -5,18 +5,18 @@ namespace interpreter.lexer
 {
     public class Token
     {
-        private readonly TokenType _tokenType;
-        private readonly string _literal;
+        public TokenType Type {get; set;}
+        public string Literal {get; set;}
 
         public Token(TokenType tokenType, string literal)
         {
-            _tokenType = tokenType;
-            _literal = literal;
+            Type = tokenType;
+            Literal = literal;
         }
 
         protected bool Equals(Token other)
         {
-            return _tokenType == other._tokenType && _literal == other._literal;
+            return Type == other.Type && Literal == other.Literal;
         }
 
         public override bool Equals(object obj)
@@ -26,10 +26,15 @@ namespace interpreter.lexer
             if (obj.GetType() != this.GetType()) return false;
             return Equals((Token) obj);
         }
-        
+
         public override int GetHashCode()
         {
-            return HashCode.Combine((int) _tokenType, _literal);
+            return HashCode.Combine((int) Type, Literal);
+        }
+
+        public override string ToString()
+        {
+            return $"{Type}:{Literal}";
         }
     }
 }
