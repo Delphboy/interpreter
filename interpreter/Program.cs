@@ -32,6 +32,7 @@ namespace interpreter
 
                 var lexer = new Lexer(input);
                 var token = lexer.NextToken();
+
                 while(token.Type != TokenType.EOF)
                 {
                     Console.WriteLine(token.ToString());
@@ -39,6 +40,5 @@ namespace interpreter
                 }
             }
         }
-
     }
 }

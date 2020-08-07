@@ -18,6 +18,8 @@ namespace interpreter.lexer
             _position = 0;
             _readPosition = 0;
 
+            _keywords = new Dictionary<string, TokenType>();
+
             initialiseKeywordMap();
             readCharacter();
         }
@@ -178,8 +180,6 @@ namespace interpreter.lexer
 
         private void initialiseKeywordMap()
         {
-            _keywords = new Dictionary<string, TokenType>();
-
             _keywords.Add("fn", TokenType.FUNCTION);
             _keywords.Add("let", TokenType.LET);
             _keywords.Add("true", TokenType.TRUE);
