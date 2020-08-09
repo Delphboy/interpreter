@@ -5,13 +5,13 @@ namespace interpreter.parser
 {
     public class Program : INode
     {
-        public List<IStatement> Statements {get; }
+        public List<Statement> Statements {get; }
         public string TokenLiteral => Statements.Count() > 0 ? Statements[0].TokenLiteral : "";
         public string TokenString => Statements.FirstOrDefault().TokenString;
 
         public Program()
         {
-            Statements = new List<IStatement>();
+            Statements = new List<Statement>();
         }
     }
 }

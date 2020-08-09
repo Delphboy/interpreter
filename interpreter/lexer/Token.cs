@@ -8,6 +8,12 @@ namespace interpreter.lexer
         public TokenType Type {get; set;}
         public string Literal {get; set;}
 
+        public Token()
+        {
+            Type = TokenType.ILLEGAL;
+            Literal = string.Empty;
+        }
+
         public Token(TokenType tokenType, string literal)
         {
             Type = tokenType;
@@ -19,7 +25,7 @@ namespace interpreter.lexer
             return Type == other.Type && Literal == other.Literal;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
