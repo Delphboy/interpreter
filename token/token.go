@@ -42,7 +42,7 @@ const (
 	NOT_EQ   = "!="
 
 	// Delimeters
-	COMMA     = "'"
+	COMMA     = ","
 	SEMICOLON = ";"
 	LPAREN    = "("
 	RPAREN    = ")"
